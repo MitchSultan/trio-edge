@@ -27,21 +27,30 @@ export default function WorkFlow() {
           const state = Flip.getState(img);
           dest.appendChild(img);
           Flip.from(state, {
-            duration: 1.2,
+            duration:3.2,
             ease: "expo.inOut",
             absolute: true,
             onStart: () => { gsap.set(img, { zIndex: 50 }); },
             onComplete: () => { gsap.set(img, { clearProps: "zIndex" }); },
           });
         };
-        const st = ScrollTrigger.create({
-          trigger: target,
-          start: "top 72%",
-          onEnter: () => flipTo(target),
-          onLeaveBack: () => flipTo(origin),
-        });
+        const triggerMm = gsap.matchMedia();
+        const createTrigger = (trigger: HTMLElement, start: string) => {
+          const st = ScrollTrigger.create({
+            id: "workflow-flip",
+            trigger,
+            start,
+            markers: false,
+            onEnter: () => flipTo(target),
+            onLeaveBack: () => flipTo(origin),
+          });
+          return () => st.kill();
+        };
+        triggerMm.add("(max-width: 767px)", () => createTrigger(origin, "top 50%"));
+        triggerMm.add("(min-width: 768px)", () => createTrigger(origin, "top 72%"));
+
         return () => {
-          st.kill();
+          triggerMm.revert();
           // React owns this node: put it back before unmount.
           if (img.parentElement !== origin) origin.appendChild(img);
         };
@@ -63,7 +72,7 @@ export default function WorkFlow() {
           <h2 data-reveal className="display text-[clamp(2.4rem,7vw,6.5rem)]">Our work</h2>
           <a href="#contact" className="btn btn-outline hidden md:inline-flex">All projects</a>
         </div>
-        <div className="grid grid-cols-1 gap-x-4 gap-y-14 sm:grid-cols-2 md:grid-cols-3 md:gap-x-6">
+        <div className="grid grid-cols-1 gap-x-4 gap-y-14 sm:grid-cols-2 md:grid-cols-2 md:gap-x-6">
           {projects.map((p, i) => (
             <article key={p.slug} className={i % 3 === 1 ? "md:mt-24" : i % 3 === 2 ? "md:mt-12" : ""}>
               {p.featured ? (

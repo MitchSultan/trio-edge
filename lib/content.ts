@@ -5,12 +5,12 @@ export const heroVideos = Array.from({ length: 6 }, (_, i) => `/videos/tile-${i 
 
 export type Project = { slug: string; title: string; category: string; year: string; img: string; featured?: boolean };
 export const projects: Project[] = [
-  { slug: "nyayo-courtyard", title: "Nyayo Courtyard", category: "Architecture film", year: "2026", img: img("te-featured", 1800, 1200), featured: true },
-  { slug: "mama-mboga-network", title: "Mama Mboga Network", category: "Brand and web", year: "2026", img: img("te-2", 1200, 1500) },
-  { slug: "rift-valley-coffee", title: "Rift Valley Coffee Co.", category: "E-commerce", year: "2025", img: img("te-3", 1200, 1500) },
-  { slug: "lamu-light-festival", title: "Lamu Light Festival", category: "Campaign", year: "2025", img: img("te-4", 1200, 1500) },
-  { slug: "kisumu-lakeside", title: "Kisumu Lakeside Homes", category: "Property platform", year: "2025", img: img("te-5", 1200, 1500) },
-  { slug: "safari-sound", title: "Safari Sound Archive", category: "Documentary", year: "2024", img: img("te-6", 1200, 1500) },
+  // { slug: "nyayo-courtyard", title: "Nyayo Courtyard", category: "Architecture film", year: "2026", img: img("te-featured", 1800, 1200)},
+  // { slug: "mama-mboga-network", title: "Mama Mboga Network", category: "Brand and web", year: "2026", img: img("te-2", 1200, 1500) },
+  { slug: "omanyala-foundation", title: "Omanyala Foundation", category: "E-commerce", year: "2025", img: "/images/ma.png" },
+  { slug: "merishaw-school", title: "Merishaw School", category: "Campaign", year: "2025", img: "/images/utu.png" },
+  { slug: "utucrest-global", title: "UtuCrest Global", category: "Property platform", year: "2025", img: "/images/utug.png" },
+  { slug: "shepherds-junior-school", title: "Shepherds Junior School", category: "Education", year: "2024", img: "/images/sh.png", featured: true },
 ];
 
 export const about = {
@@ -19,15 +19,15 @@ export const about = {
 };
 
 export const caseStudy = {
-  title: "Nyayo Courtyard",
-  client: "Nyayo Courtyard Trust",
+  title: "Shepherds Junior School",
+  client: "Shepherds Junior School, Nairobi",
   intro: "A public courtyard in the middle of Nairobi needed one story that residents, visitors and funders could all recognise.",
   blocks: [
-    { h: "The challenge", p: "Three overlapping stakeholders, no shared identity, and a site that most people walked through without noticing." },
-    { h: "What we did", p: "We filmed the courtyard across a full year, built a visual identity from its materials and light, and launched a website that doubles as a living archive." },
-    { h: "What changed", p: "Weekend visits grew, two new partners signed on, and the film was selected for four regional festivals." },
+    { h: "The Problem:-", p: " Low number of new students- Poor uptake of new education system- Low Brand visibility and consistency" },
+    { h: "What we did", p: "We created a new brand identity anchored on culture and the rich heritage- Brought in storytelling to help improve brand image and push for more enrollments" },
+    { h: "What changed", p: "Out of the goal of 100 students in a year, we managed to get 78 students in 3 months" },
   ],
-  stats: [["+64%", "weekend visits"], ["4", "festival selections"], ["12 wks", "brief to launch"]],
+  stats: [["+78%", "Student Increase"], ["4", "festival selections"], ["13 wks", "brief to launch"]],
 };
 
 export const founder = {

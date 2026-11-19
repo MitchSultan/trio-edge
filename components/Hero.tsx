@@ -79,11 +79,11 @@ export default function Hero({ ready }: { ready: boolean }) {
 
   return (
     <section ref={root} id="top" className="relative h-svh w-full overflow-hidden bg-deep">
-      <div data-grid className="absolute inset-x-0 -top-[20svh] grid h-[140svh] grid-cols-6 gap-1 will-change-transform md:gap-2">
+      <div data-grid className="absolute inset-x-0 -top-[20svh] grid h-[140svh] grid-cols-3 gap-1 will-change-transform md:grid-cols-6 md:gap-2">
         {Array.from({ length: COLS }, (_, c) => (
-          <div key={c} data-col className="grid grid-rows-4 gap-1 will-change-transform md:gap-2">
+          <div key={c} data-col className={`${c < 3 ? "grid" : "hidden md:grid"} grid-rows-4 gap-1 will-change-transform md:gap-2`}>
             {Array.from({ length: ROWS }, (_, r) => {
-              const k = c * ROWS + r;
+              const k = (c * 2 + r) % heroVideos.length;
               return (
                 <div key={r} className="relative overflow-hidden bg-raised">
                   <div
@@ -92,7 +92,7 @@ export default function Hero({ ready }: { ready: boolean }) {
                   />
                   <video
                     className="absolute inset-0 h-full w-full object-cover"
-                    src={heroVideos[(c + r) % heroVideos.length]}
+                    src={heroVideos[k]}
                     autoPlay
                     muted
                     loop
@@ -113,11 +113,11 @@ export default function Hero({ ready }: { ready: boolean }) {
 
       <div className="absolute inset-x-0 bottom-0 z-10 px-6 pb-10 md:px-12 md:pb-14">
         <p data-sub className="mb-5 max-w-md text-base text-white/80 md:text-lg">
-          A Nairobi studio for brand, web and film.
+          Strategy. Clarity. Edge
         </p>
         <h1 className="display grid text-[clamp(2.6rem,8.2vw,8rem)]">
-          <span data-h1-a className="col-start-1 row-start-1">Made in Nairobi.</span>
-          <span data-h1-b className="col-start-1 row-start-1">Built for the World,</span>
+          <span data-h1-a className="col-start-1 row-start-1">We tell Stories,</span>
+          <span data-h1-b className="col-start-1 row-start-1">We sell Authenticity.</span>
         </h1>
       </div>
     </section>

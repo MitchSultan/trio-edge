@@ -9,7 +9,7 @@ import About from "./About";
 import WorkFlow from "./WorkFlow";
 import Founder from "./Founder";
 import Team from "./Team";
-import Services from "./Services";
+// import Services from "./Services";
 import Partners from "./Partners";
 import Testimonials from "./Testimonials";
 import FinalCta from "./FinalCta";
@@ -35,7 +35,7 @@ export default function HomeClient() {
         <WorkFlow />
         <Founder />
         <Team />
-        <Services />
+        {/* <Services /> */}
         <Partners />
         <Testimonials />
         <FinalCta />
