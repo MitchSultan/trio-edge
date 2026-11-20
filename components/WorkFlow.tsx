@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { gsap, Flip, ScrollTrigger, useGSAP, NO_MOTION } from "@/lib/gsap";
 import { useReveal } from "@/lib/useReveal";
 import { projects, caseStudy } from "@/lib/content";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 /* eslint-disable @next/next/no-img-element */
 
 const featured = projects.find((p) => p.featured)!;
@@ -96,18 +97,22 @@ export default function WorkFlow() {
         <h2 data-reveal className="display max-w-[14ch] text-[clamp(2.4rem,7vw,6.5rem)]">{caseStudy.title}</h2>
         <p data-reveal className="mt-6 max-w-xl text-lg text-muted md:text-xl">{caseStudy.intro}</p>
         <div data-flip-target className="relative mt-12 aspect-[16/10] w-full border border-hairline/40 bg-raised md:mt-20" />
-        <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-8">
-          {caseStudy.blocks.map((b) => (
-            <div key={b.h}>
-              <div data-line className="mb-5 h-px bg-hairline" />
-              <h3 className="text-xl font-medium tracking-tight">{b.h}</h3>
-              <p data-reveal className="mt-3 max-w-sm text-base text-muted">{b.p}</p>
-            </div>
-          ))}
-        </div>
-        <dl className="mt-20 grid grid-cols-3 gap-4 md:mt-32">
+        <Carousel className="mt-16" opts={{ align: "start" }} aria-label="Case study details">
+          <CarouselContent className="md:-ml-8">
+            {caseStudy.blocks.map((b) => (
+              <CarouselItem key={b.h} className="basis-[90%] sm:basis-[80%] md:basis-1/3 md:pl-8">
+                <div>
+                  <div data-line className="mb-5 h-px bg-hairline" />
+                  <h3 className="text-xl font-medium tracking-tight">{b.h}</h3>
+                  <p data-reveal className="mt-3 max-w-sm text-base text-muted">{b.p}</p>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+        <dl className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-4 md:mt-32">
           {caseStudy.stats.map(([n, l]) => (
-            <div key={l}>
+            <div className="flex flex-row justify-between items-center md:flex-col" key={l}>
               <dt className="display text-[clamp(2rem,6vw,5.5rem)] text-brand">{n}</dt>
               <dd className="mt-1 text-sm text-muted md:text-base">{l}</dd>
             </div>

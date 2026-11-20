@@ -14,8 +14,8 @@ export const projects: Project[] = [
 ];
 
 export const about = {
-  lead: "We are a Nairobi studio that turns local stories into brands, films and digital products that hold their own anywhere in the world. We start with the people and places behind a business, then build the identity, the website and the content that carry it further.",
-  second: "Our team works across Nairobi, Kampala and Sydney, so every project gets a local eye and a global one.",
+  lead: "We are a Nairobi based agency that turns local stories into brands, films and digital products that hold their own anywhere in the world. We start with the people and places behind a business, then build the identity, the website and the content that carry it further.",
+  second: "Our team is dedicated to make sure your brand get seen and heard.",
 };
 
 export const caseStudy = {
@@ -31,17 +31,17 @@ export const caseStudy = {
 };
 
 export const founder = {
-  name: "Amani Otieno",
+  name: "Rachael",
   role: "Founder and creative director",
-  img: img("te-founder", 1000, 1300),
+  img: "/images/team4.webp",
   quote: "I started Trio Edge because the best work I saw in Nairobi was being described to the world by people who had never stood in these streets. We tell it from the inside, and we build it to travel.",
 };
 
 export const team = [
-  { name: "Wanjiru Kamau", role: "Head of design", img: img("te-t1", 900, 1100) },
-  { name: "Brian Mutua", role: "Lead engineer", img: img("te-t2", 900, 1100) },
-  { name: "Zawadi Achieng", role: "Film director", img: img("te-t3", 900, 1100) },
-  { name: "Tom Nguyen", role: "Strategy lead", img: img("te-t4", 900, 1100) },
+  { name: "Wanjiru Kamau", role: "Head of design", img: '/images/team.webp' },
+  { name: "Brian Mutua", role: "Lead engineer", img: '/images/team1.webp' },
+  { name: "Zawadi Achieng", role: "Film director", img: '/images/team2.webp'},
+  { name: "Tom Nguyen", role: "Strategy lead", img: '/images/team3.webp' },
 ];
 
 export const services = [
@@ -52,7 +52,7 @@ export const services = [
   { title: "Campaigns", text: "Launch and growth campaigns planned, produced and measured end to end." },
 ];
 
-export const partners = ["Safaricom", "Equity Bank", "KCB Group", "Twiga Foods", "Nation Media", "Kenya Airways", "Java House", "Strathmore University"];
+export const partners = ["Omanyala", "UtuCrest", "Sherpherd Junior School", "Merishaw School"];
 
 export const testimonials = [
   { q: "They understood our story faster than we did, and the site now sells it better than any pitch deck.", a: "Njeri Karanja", r: "Director, Rift Valley Coffee Co." },
